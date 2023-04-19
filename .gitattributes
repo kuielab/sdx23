@@ -61,3 +61,12 @@ my_submission/src/wandb/run-20230212_154834-w257ocnd/logs/debug-internal.log fil
 my_submission/src/wandb/run-20230212_154834-w257ocnd/run-w257ocnd.wandb filter=lfs diff=lfs merge=lfs -text
 my_submission/src/wandb/run-20230329_111538-h0lo928q/logs/debug-internal.log filter=lfs diff=lfs merge=lfs -text
 my_submission/src/wandb/run-20230329_111538-h0lo928q/run-h0lo928q.wandb filter=lfs diff=lfs merge=lfs -text
+my_submission/ckpts/tfc_tdf/model2/ckpt filter=lfs diff=lfs merge=lfs -text
+my_submission/ckpts/tfc_tdf/model3/ckpt filter=lfs diff=lfs merge=lfs -text
+my_submission/ckpts/tfc_tdf/model1/ckpt filter=lfs diff=lfs merge=lfs -text
+my_submission/ckpts/demucs/checkpoints/75fc33f5-1941ce65.th filter=lfs diff=lfs merge=lfs -text
+my_submission/ckpts/demucs/checkpoints/d12395a8-e57c48e6.th filter=lfs diff=lfs merge=lfs -text
+my_submission/ckpts/demucs/checkpoints/955717e8-8726e21a.th filter=lfs diff=lfs merge=lfs -text
+my_submission/ckpts/demucs/checkpoints/92cfc3b6-ef3bcb9c.th filter=lfs diff=lfs merge=lfs -text
+my_submission/ckpts/demucs/checkpoints/04573f0d-f3cf25b2.th filter=lfs diff=lfs merge=lfs -text
+my_submission/ckpts/demucs/checkpoints/f7e0c4bc-ba3fe64a.th filter=lfs diff=lfs merge=lfs -text
