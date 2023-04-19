@@ -23,7 +23,7 @@
 ## Model Summary
 
 * Data
-  * All 203 tracks of the labelnoise dataset was used for training (no validation split)
+  * All 203 tracks of the Moises dataset was used for training (no validation split)
   * Augmentation
     * Random chunking and mixing sources from different tracks ([1])
 * Model
