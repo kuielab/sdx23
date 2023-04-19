@@ -46,3 +46,24 @@ class MSSDataset(torch.utils.data.Dataset):
     
     def __getitem__(self, index):
         return torch.stack([self.load_source(self.metadata, i) for i in self.instruments])
+
+    
+    
+class DNRDataset(MSSDataset):
+    def __init__(self, config, data_path):               
+        super().__init__(config, data_path)
+        
+        self.stereo_prob = config.audio.stereo_prob
+    
+    def load_source(self, metadata, i):
+        while True:
+            track_path, track_length = random.choice(metadata)
+            if np.random.random() < self.stereo_prob:                  
+                x = load_chunk(track_path+f'/{i}.wav', track_length, self.chunk_size*2)
+                source = x.reshape(2,-1)
+            else:
+                x = load_chunk(track_path+f'/{i}.wav', track_length, self.chunk_size)
+                source = np.stack([x, x])
+            if np.abs(source).mean() >= self.min_mean_abs:  # remove quiet chunks
+                break
+        return torch.tensor(source, dtype=torch.float32)

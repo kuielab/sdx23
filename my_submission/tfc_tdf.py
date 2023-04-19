@@ -7,11 +7,12 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
-model_name = 'modelA'
-ckpts = ['step100000_seed0', 'step100000_seed1', 'step100000_seed2']
+model_name = 'tfc_tdf'
+ckpts = ['step30000_seed0', 'step30000_seed1', 'step30000_seed2']
 
 model_path = f'my_submission/ckpts/{model_name}'
 config_path = model_path+'/config.yaml'
+
 
 
 class MusicSeparationModel:
@@ -26,7 +27,7 @@ class MusicSeparationModel:
     @property
     def instruments(self):
         """ DO NOT CHANGE """
-        return ['bass', 'drums', 'other', 'vocals']
+        return ['dialog', 'effect', 'music']
 
     def raise_aicrowd_error(self, msg):
         """ Will be used by the evaluator to provide logs, DO NOT CHANGE """
@@ -50,7 +51,7 @@ class MusicSeparationModel:
             output_sample_rates[instrument] = sample_rate
                 
         residual = mixed_sound_array - np.sum(list(separated_music_arrays.values()), 0)
-        separated_music_arrays['other'] += residual/2
+        separated_music_arrays['effect'] += residual/2
             
         return separated_music_arrays, output_sample_rates
     
@@ -93,4 +94,4 @@ class MusicSeparationModel:
 
         estimated_sources = X[..., C-H:-(pad_size+C-H)]/N
         
-        return {k:v for k,v in zip(self.config.training.instruments, estimated_sources.cpu().numpy())}
+        return {k:v for k,v in zip(self.config.inference.instruments, estimated_sources.cpu().numpy())}

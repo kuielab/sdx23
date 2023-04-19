@@ -1,12 +1,13 @@
 audio:
   chunk_size: 261120
-  dim_f: 4096
+  dim_f: 1024
   dim_t: 256
   hop_length: 1024
   min_mean_abs: 0.01
-  n_fft: 8192
+  n_fft: 2048
   num_channels: 2
   sample_rate: 44100
+  stereo_prob: 0.7
 model:
   act: gelu
   bottleneck_factor: 4
@@ -20,22 +21,21 @@ model:
   - 2
   - 2
 training:
-  batch_size: 6
-  coarse_loss_clip: false
-  datasets:
-  - ../data/moises/bleeding
+  batch_size: 8
   ema_momentum: 0.999
   grad_clip: null
   instruments:
-  - vocals
-  - drums
-  - bass
-  - other
+  - music
+  - speech
+  - sfx
   lr: 0.0001
-  num_steps: 150000
-  q: 0.93
+  num_steps: 30000
   target_instrument: null
 inference:
-  batch_size: 2
-  dim_t: 1024
+  batch_size: 8
+  dim_t: 256
+  instruments:
+  - music
+  - dialog
+  - effect
   num_overlap: 8

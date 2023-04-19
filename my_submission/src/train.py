@@ -12,10 +12,10 @@ from torch.optim import Adam, RMSprop, AdamW
 from torch.utils.data import DataLoader
 from torch.cuda.amp.grad_scaler import GradScaler
 
-from utils import manual_seed, masked_loss
+from utils import manual_seed
 from tfc_tdf_v3 import TFC_TDF_net, STFT
 from ema import EMAHelper
-from dataset import MSSDataset
+from dataset import DNRDataset
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -38,7 +38,7 @@ def train():
     with open(args.model_path+'/config.yaml') as f:
         config = ConfigDict(yaml.load(f, Loader=yaml.FullLoader))
     
-    trainset = MSSDataset(config, args.data_path)
+    trainset = DNRDataset(config, args.data_path)
     
     train_loader = DataLoader(
         trainset, 
@@ -65,7 +65,7 @@ def train():
     ema_helper.register(model)
     
     print('Train Loop')
-    scaler = GradScaler()    
+    scaler = GradScaler()  
     for batch in tqdm(train_loader):   
 
         y = batch.to(device)
@@ -73,9 +73,7 @@ def train():
 
         with torch.cuda.amp.autocast():        
             y_ = model(x)   
-            loss = masked_loss(y_, y, 
-                                q=config.training.q, 
-                                coarse=config.training.coarse_loss_clip) 
+            loss = nn.MSELoss()(y_, y)
 
         scaler.scale(loss).backward()
         if config.training.grad_clip:

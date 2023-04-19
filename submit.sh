@@ -76,7 +76,7 @@ setup_commits() {
   TAG=$(echo "$@" | sed 's/ /-/g')
   git add --all
   git commit -m "Changes for submission-$TAG" || true  # don't exit when no new commits are there
-  git push $REMOTE AB
+  git push $REMOTE cdx
   git tag -am "submission-$TAG" "submission-$TAG"
   git push $REMOTE "submission-$TAG"
   log_success "Check the submission progress in your repository: $(get_submission_remote_url | awk -F'@' '{print $NF}' | sed 's|\.git||g')/issues"

@@ -19,7 +19,7 @@ class AIcrowdWrapper:
                  predictions_dir='./evaluator_outputs/'):
                  
         self.model = MySeparationModel()
-        self.instruments = ['bass', 'drums', 'other', 'vocals']
+        self.instruments = ['dialog', 'effect', 'music']
         shared_dir = os.getenv("AICROWD_PUBLIC_SHARED_DIR", None)
         if shared_dir is not None:
             self.predictions_dir = os.path.join(shared_dir, 'predictions')
@@ -36,26 +36,41 @@ class AIcrowdWrapper:
     def check_output(self, separated_music_arrays, output_sample_rates):
         assert set(self.instruments) == set(separated_music_arrays.keys()), "All instrument not present"
     
-    def save_prediction(self, prediction_path, separated_music_arrays, output_sample_rates):
+    def save_prediction(self, foldername, separated_music_arrays, output_sample_rates):
+        prediction_path = os.path.join(self.predictions_dir, foldername)
         if not os.path.exists(prediction_path):
             os.mkdir(prediction_path)
             
         for instrument in self.instruments:
-            full_path = os.path.join(prediction_path, f'{instrument}.wav')
+            full_path = os.path.join(prediction_path, f'{foldername}_{instrument}.wav')
             soundfile.write(full_path, 
                             data=separated_music_arrays[instrument],
                             samplerate=output_sample_rates[instrument])
+
+    
+    def read_mixture_files(self, foldername):
+        try:
+            lt_path = os.path.join(self.dataset_dir, foldername, f'{foldername}_mixture_Lt.wav')
+            rt_path = os.path.join(self.dataset_dir, foldername, f'{foldername}_mixture_Rt.wav')
+            lt_array, lt_sr = soundfile.read(lt_path)
+            rt_array, rt_sr = soundfile.read(rt_path)
+        except soundfile.LibsndfileError:
+            lt_path = os.path.join(self.dataset_dir, foldername, 'mix.wav')
+            rt_path = os.path.join(self.dataset_dir, foldername, 'mix.wav')
+            lt_array, lt_sr = soundfile.read(lt_path)
+            rt_array, rt_sr = soundfile.read(rt_path)        
+        assert lt_sr == rt_sr
+        assert len(lt_array) == len(rt_array)
+
+        mixed_sound_array = np.stack([lt_array, rt_array], axis=1)
+        return mixed_sound_array, lt_sr
+
         
 
     def separate_music_file(self, foldername):
-        full_path = os.path.join(self.dataset_dir, foldername, 'mixture.wav')
-        music_array, samplerate = soundfile.read(full_path)
-        
-        separated_music_arrays, output_sample_rates = self.model.separate_music_file(music_array, samplerate)
-
+        mixed_sound_array, sample_rate = self.read_mixture_files(foldername)
+        separated_music_arrays, output_sample_rates = self.model.separate_music_file(mixed_sound_array, sample_rate)
         self.check_output(separated_music_arrays, output_sample_rates)
-
-        prediction_path = os.path.join(self.predictions_dir, foldername)
-        self.save_prediction(prediction_path, separated_music_arrays, output_sample_rates)
+        self.save_prediction(foldername, separated_music_arrays, output_sample_rates)
 
         return True
