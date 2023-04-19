@@ -3,9 +3,9 @@
     "authors": [
       "kim_min_seok"
     ],
-    "external_dataset_used": false,
+    "external_dataset_used": true,
     "bleeding": false,
-    "labelnoise": true,
+    "labelnoise": false,
     "gpu": true,
     "description": ""
 }

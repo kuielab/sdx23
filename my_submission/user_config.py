@@ -1,4 +1,5 @@
-from my_submission.modelA import MusicSeparationModel as A
-from my_submission.modelB import MusicSeparationModel as B
+#from my_submission.tfc_tdf import MusicSeparationModel
+#from my_submission.demucs import MusicSeparationModel
+from my_submission.blend import MusicSeparationModel
 
-MySeparationModel = A
+MySeparationModel = MusicSeparationModel

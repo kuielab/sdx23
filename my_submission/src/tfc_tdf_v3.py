@@ -231,5 +231,3 @@ class TFC_TDF_net(nn.Module):
         x = self.stft.inverse(x)
         
         return x
-    
-    

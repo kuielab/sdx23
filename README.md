@@ -1,17 +1,9 @@
+
 # Submission
 
 ## Submission Summary
 
-* MDX Leaderboard A
-	* Submission ID: 000000
-	* Submitter: kim_min_seok
-	* Final rank: 
-	* Final scores:
-	  |  SDR_song | SDR_bass | SDR_drums | SDR_other | SDR_vocals |
-	  | :------: | :------: | :-------: | :-------: | :--------: |
-	  |   0.00   |   0.00   |   0.00   |   0.00    |    0.00    |
-	  	  
-* MDX Leaderboard B
+* MDX Leaderboard C
 	* Submission ID: 000000
 	* Submitter: kim_min_seok
 	* Final rank: 
@@ -23,39 +15,27 @@
 ## Model Summary
 
 * Data
-  * All 203 tracks of the labelnoise dataset was used for training (no validation split)
+  * All 150 tracks of MusdbHQ
   * Augmentation
     * Random chunking and mixing sources from different tracks ([1])
+    * Pitch shift and time stretch ([2])
 * Model
-  * A 'multi-source' version of TFC-TDF U-Net[2, 3] with some architectural improvements, including Channel-wise Subband[4]
-  * Final submission is an ensemble of 3 models with identical architecture and training procedure but with different random seeds 
-* Noise-robust Training
-  * Leaderboard A: Loss masking
-      * Intuitively, data with high training loss is likely to be audio chunks with labelnoise
-	  * For each training batch, discard (=don't use for weight update) batch elements with higher loss than some quantile 
-		  * ex) only use half of the training batch for each weight update
-  * Leaderboard B: Loss masking (along temporal dimension)
-      * Compared to labelnoise, data with bleeding seemed to vary less in terms of the amount of noise
-      * A more fine-grained masking method performed better (discarding temporal bins with high loss) 
+  * Ensemble of 5 models
+	  * 2 x Hybrid Demucs[3, 4] 
+		  * we used the pretrained weights (htdemucs_ft, hdemucs_mmi) from [github.com/facebookresearch/demucs](https://github.com/facebookresearch/demucs)
+	  * 3 x TFC-TDF U-Net[5, 6]
+		  * 'multi-source' version with some architectural improvements, including Channel-wise Subband[7]
 
-[1] S. Uhlich, et al., "Improving music source separation based on deep neural networks through data augmentation and network blending", ICASSP 2017.
+[1] S. Uhlich et al., "Improving music source separation based on deep neural networks through data augmentation and network blending", ICASSP 2017.
 
-[2] W. Choi, et al. "Investigating u-nets with various intermediate blocks for spectrogram-based singing voice separation", ISMIR 2020.
+[2] Cohen-Hadria, Alice, et al. "Improving singing voice separation using Deep U-Net and Wave-U-Net with data augmentation", EUSIPCO 2019.
 
-[3] M. Kim, et al. “Kuielab-mdx-net: A two-stream neural network for music demixing”, MDX Workshop at ISMIR 2021.
+[3] Defossez, Alexandre, "Hybrid Spectrogram and Waveform Source Separation", MDX Workshop at ISMIR 2021.
 
-[4] H. Liu, et al. "Channel-wise Subband Input for Better Voice and Accompaniment Separation on High Resolution Music", INTERSPEECH 2020.
+[4] Rouard, Simon, et al. "Hybrid Transformers for Music Source Separation". 
 
+[5] Choi, Woosung, et al. "Investigating u-nets with various intermediate blocks for spectrogram-based singing voice separation", ISMIR 2020.
 
-# Reproduction
+[6] Kim, Minseok, et al. “Kuielab-mdx-net: A two-stream neural network for music demixing”, MDX Workshop at ISMIR 2021.
 
-## How to reproduce the submission
-- Run submit.sh after configuring [my_submission/user_config.py](my_submission/user_config.py)
-	- Leaderboard A
-		- set ```MySeparationModel = A```
-	- Leaderboard B
-		- set ```MySeparationModel = B```
-
-## How to reproduce the training
-- All code needed to reproduce training is in [my_submission/src](my_submission/src)
-- See [HOW_TO_TRAIN.md](my_submission/src/HOW_TO_TRAIN.md)
+[7] Liu, Haohe, et al. "Channel-wise Subband Input for Better Voice and Accompaniment Separation on High Resolution Music", INTERSPEECH 2020.

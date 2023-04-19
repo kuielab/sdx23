@@ -1,9 +1,8 @@
 audio:
-  chunk_size: 261120
+  chunk_size: 260096
   dim_f: 4096
-  dim_t: 256
-  hop_length: 1024
-  min_mean_abs: 0.01
+  dim_t: 128
+  hop_length: 2048
   n_fft: 8192
   num_channels: 2
   sample_rate: 44100
@@ -13,27 +12,23 @@ model:
   growth: 64
   norm: InstanceNorm
   num_blocks_per_scale: 2
-  num_channels: 64
+  num_channels: 256
   num_scales: 5
   num_subbands: 4
   scale:
   - 2
   - 2
 training:
-  batch_size: 6
-  coarse_loss_clip: true
-  ema_momentum: 0.999
-  grad_clip: null
+  batch_size: 8
+  grad_clip: 0
   instruments:
   - vocals
   - drums
   - bass
   - other
-  lr: 0.0001
-  num_steps: 100000
-  q: 0.4
+  lr: 3.0e-05
   target_instrument: null
 inference:
-  batch_size: 2
+  batch_size: 1
   dim_t: 1024
   num_overlap: 8

@@ -59,3 +59,26 @@ class AIcrowdWrapper:
         self.save_prediction(prediction_path, separated_music_arrays, output_sample_rates)
 
         return True
+    
+    
+    def clean_bleeding(self, path):
+
+        prediction_path = path.replace(self.dataset_dir, self.predictions_dir)
+                    
+        music_array, samplerate = soundfile.read(path)
+
+        if not os.path.exists(prediction_path):
+            prediction_dir = os.path.dirname(prediction_path)
+            if not os.path.exists(prediction_dir):
+                os.makedirs(prediction_dir)
+                
+            separated_music_arrays, output_sample_rates = self.model.separate_music_file(music_array, samplerate)
+
+            for instrument in self.instruments:
+                if instrument in prediction_path:
+                    soundfile.write(prediction_path, 
+                                    data=separated_music_arrays[instrument],
+                                    samplerate=output_sample_rates[instrument])
+      
+
+  

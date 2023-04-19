@@ -41,6 +41,7 @@ def evaluate(LocalEvalConfig):
     folder_names = sorted(os.listdir(datafolder))
     folder_names = list(filter(lambda x: x[0]!='.' and os.path.isdir(datafolder+x), folder_names))
     
+    all_metrics = {}
     for fname in tqdm(folder_names, desc="Demixing"):       
         print(fname)
         model.separate_music_file(fname)
