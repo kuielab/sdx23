@@ -4,7 +4,7 @@
 ## Submission Summary
 
 * MDX Leaderboard C
-	* Submission ID: 000000
+	* Submission ID: 216768
 	* Submitter: kim_min_seok
 	* Final rank: 
 	* Final scores:
