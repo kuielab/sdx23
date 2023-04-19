@@ -7,7 +7,7 @@
 ## Submission Summary
 
 * CDX Leaderboard A
-	* Submission ID: 000000
+	* Submission ID: 216962
 	* Submitter: kim_min_seok
 	* Final rank: 
 	* Final scores:
