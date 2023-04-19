@@ -1,0 +1,5 @@
+torch>=1.13.0
+numpy
+soundfile
+ml_collections
+tqdm

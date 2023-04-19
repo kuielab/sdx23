@@ -1,0 +1,7 @@
+numpy # Don't remove
+soundfile # Don't remove
+museval
+mir_eval
+torch>=1.13.0
+pyyaml
+ml_collections

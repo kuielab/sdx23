@@ -1,0 +1,11 @@
+{
+    "challenge_id": "music-demixing-track-mdx-23",
+    "authors": [
+      "kim_min_seok"
+    ],
+    "external_dataset_used": false,
+    "bleeding": false,
+    "labelnoise": true,
+    "gpu": true,
+    "description": ""
+}
