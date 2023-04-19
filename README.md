@@ -3,7 +3,7 @@
 ## Submission Summary
 
 * MDX Leaderboard A
-	* Submission ID: 000000
+	* Submission ID: 216209
 	* Submitter: kim_min_seok
 	* Final rank: 
 	* Final scores:
@@ -12,7 +12,7 @@
 	  |   0.00   |   0.00   |   0.00   |   0.00    |    0.00    |
 	  	  
 * MDX Leaderboard B
-	* Submission ID: 000000
+	* Submission ID: 216211
 	* Submitter: kim_min_seok
 	* Final rank: 
 	* Final scores:
