@@ -6,11 +6,11 @@
 * MDX Leaderboard C
 	* Submission ID: 216768
 	* Submitter: kim_min_seok
-	* Final rank: 
+	* Final rank: 5th place
 	* Final scores:
 	  |  SDR_song | SDR_bass | SDR_drums | SDR_other | SDR_vocals |
 	  | :------: | :------: | :-------: | :-------: | :--------: |
-	  |   0.00   |   0.00   |   0.00   |   0.00    |    0.00    |
+	  |   9.224   |   9.684   |   9.474   |   7.332    |    10.405    |
 
 ## Model Summary
 
