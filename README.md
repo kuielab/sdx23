@@ -5,20 +5,20 @@
 * MDX Leaderboard A
 	* Submission ID: 216209
 	* Submitter: kim_min_seok
-	* Final rank: 
+	* Final rank: 3rd place
 	* Final scores:
 	  |  SDR_song | SDR_bass | SDR_drums | SDR_other | SDR_vocals |
 	  | :------: | :------: | :-------: | :-------: | :--------: |
-	  |   0.00   |   0.00   |   0.00   |   0.00    |    0.00    |
+	  |   6.752   |  6.718   |  6.494    |  5.430    |   8.366    |
 	  	  
 * MDX Leaderboard B
 	* Submission ID: 216211
 	* Submitter: kim_min_seok
-	* Final rank: 
+	* Final rank: 1st place
 	* Final scores:
 	  |  SDR_song | SDR_bass | SDR_drums | SDR_other | SDR_vocals |
 	  | :------: | :------: | :-------: | :-------: | :--------: |
-	  |   0.00   |   0.00   |   0.00   |   0.00    |    0.00    |
+	  |   6.739   |  6.881   |  6.450    |  5.445    |   8.179    |
 
 ## Model Summary
 
