@@ -9,7 +9,7 @@
 	* Final scores:
 	  |  SDR_song | SDR_bass | SDR_drums | SDR_other | SDR_vocals |
 	  | :------: | :------: | :-------: | :-------: | :--------: |
-	  |   6.513   |  6.718   |  6.712    |  4.816    |   7.816    |
+	  |   6.513   |  6.707   |  6.712    |  4.816    |   7.816    |
 	  	  
 * MDX Leaderboard B
 	* Submission ID: 216211
