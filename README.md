@@ -9,7 +9,7 @@
 * CDX Leaderboard A
 	* Submission ID: 216962
 	* Submitter: kim_min_seok
-	* Final rank: 6th place
+	* Final rank: 5th place
 	* Final scores:
 	  |  Mean SDR | SDR Dialog | SDR Effect | SDR Music | 
 	  | :------: | :------: | :-------: | :-------: | 
