@@ -29,8 +29,11 @@
 	* Final submission is an ensemble of 3 models with identical architecture and training procedure but with different random seeds
 
 [1] S. Uhlich, et al., "Improving music source separation based on deep neural networks through data augmentation and network blending", ICASSP 2017.
+
 [2] W. Choi, et al. "Investigating u-nets with various intermediate blocks for spectrogram-based singing voice separation", ISMIR 2020.
+
 [3] M. Kim, et al. "Kuielab-mdx-net: A two-stream neural network for music demixing", MDX Workshop at ISMIR 2021.
+
 [4] H. Liu, et al. "Channel-wise Subband Input for Better Voice and Accompaniment Separation on High Resolution Music", INTERSPEECH 2020.
 
 
