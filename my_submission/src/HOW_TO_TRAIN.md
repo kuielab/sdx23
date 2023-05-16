@@ -19,3 +19,4 @@ pip install -r requirements.txt
 	        ```bash
 	        --device_ids 0 1 2 3
 	        ```
+- You will need at least 22GB of GPU memory (we used one RTX3090)
