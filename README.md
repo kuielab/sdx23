@@ -50,7 +50,9 @@
 # Reproduction
 
 ## How to reproduce the submission
-- Run submit.sh after configuring [my_submission/user_config.py](my_submission/user_config.py)
+1. Download [mdx_AB.zip](https://drive.google.com/file/d/1fy3aIAYnDg8WJ35hMsBhVJFLbIbLo8Gv/view?usp=share_link), which contains all pretrained model checkpoints and config.yaml files needed for submission.
+2. Move the downloaded zip file to [my_submission/ckpts](my_submission/ckpts) and unzip.
+3. Run submit.sh after configuring [my_submission/user_config.py](my_submission/user_config.py)
 	- Leaderboard A
 		- set ```MySeparationModel = A```
 	- Leaderboard B
