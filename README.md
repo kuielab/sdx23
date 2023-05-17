@@ -39,3 +39,14 @@
 [6] Kim, Minseok, et al. “Kuielab-mdx-net: A two-stream neural network for music demixing”, MDX Workshop at ISMIR 2021.
 
 [7] Liu, Haohe, et al. "Channel-wise Subband Input for Better Voice and Accompaniment Separation on High Resolution Music", INTERSPEECH 2020.
+
+# Reproduction
+
+Download [mdx_C.zip](https://drive.google.com/file/d/12CRm9qfB_z7YeHT0xHyhUBEFtK2Q819x/view?usp=sharing), which contains 
+  * pretrained model checkpoints, including pretrained demucs weights (htdemucs_ft and hdemucs_mmi)
+  * config.yaml files (configurations for training and inference)
+
+## How to reproduce the submission
+1. Create a 'ckpts' folder under [my_submission](my_submission). Unzip the downloaded zip file to 'my_submission/ckpts'.
+2. Copy [my_submission](my_submission) and [requirements.txt](requirements.txt) to your [SDX 2023 Music Demixing Track Starter Kit](https://gitlab.aicrowd.com/aicrowd/challenges/sound-demixing-challenge-2023/sdx-2023-music-demixing-track-starter-kit/).
+3. Run submit.sh
