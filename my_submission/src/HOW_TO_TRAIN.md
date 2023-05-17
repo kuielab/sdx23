@@ -1,7 +1,7 @@
 ### Setup environment
 
 ```bash
-conda env create -n cdx-net pip
+conda create -n cdx-net pip
 conda activate cdx-net
 pip install -r requirements.txt
 ```
