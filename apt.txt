@@ -1,7 +1,0 @@
-git
-libsndfile-dev
-build-essential
-ffmpeg
-sox
-libsox-dev
-libsox-fmt-all
