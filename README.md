@@ -42,7 +42,7 @@
 
 # Reproduction
 
-Download [mdx_C.zip](https://drive.google.com/file/d/12CRm9qfB_z7YeHT0xHyhUBEFtK2Q819x/view?usp=sharing), which contains 
+Download [mdx_C.zip](https://drive.google.com/file/d/1M24__8Qnd648ceXOH5PLVWenVeh6maGo/view?usp=sharing), which contains 
   * pretrained model checkpoints, including pretrained demucs weights (htdemucs_ft and hdemucs_mmi)
   * config.yaml files (configurations for training and inference)
 
