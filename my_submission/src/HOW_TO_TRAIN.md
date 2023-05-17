@@ -1,7 +1,7 @@
 ### Setup environment
 
 ```bash
-conda env create -n mdx-net pip
+conda create -n mdx-net pip
 conda activate mdx-net
 pip install -r requirements.txt
 ```
