@@ -1,9 +1,0 @@
-{
-    "challenge_id": "cinematic-sound-demixing-track-cdx-23",
-    "authors": [
-      "kim_min_seok"
-    ],
-    "external_dataset_used": false,
-    "gpu": true,
-    "description": "(optional) description about your awesome model"
-}
