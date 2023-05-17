@@ -1,7 +1,5 @@
 
 
-
-
 # Submission
 
 ## Submission Summary
@@ -39,6 +37,15 @@
 
 
 # Reproduction
+
+Download [cdx_A.zip](https://drive.google.com/file/d/1na3_3MISLGDg-7EjImU94yVgPxnPOfPv/view?usp=sharing), which contains 
+  * pretrained model checkpoints 
+  * config.yaml files (configurations for training and inference)
+
+## How to reproduce the submission
+1. Create a 'ckpts' folder under [my_submission](my_submission). Unzip the downloaded zip file to 'my_submission/ckpts'.
+2. Copy [my_submission](my_submission) and [requirements.txt](requirements.txt) to your [SDX 2023 Music Demixing Track Starter Kit](https://gitlab.aicrowd.com/aicrowd/challenges/sound-demixing-challenge-2023/sdx-2023-music-demixing-track-starter-kit/).
+3. Run submit.sh
 
 ## How to reproduce the training
 - All code needed to reproduce training is in [my_submission/src](my_submission/src)
