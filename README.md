@@ -50,3 +50,8 @@ Download [mdx_C.zip](https://drive.google.com/file/d/1M24__8Qnd648ceXOH5PLVWenVe
 1. Create a 'ckpts' folder under [my_submission](my_submission). Unzip the downloaded zip file to 'my_submission/ckpts'.
 2. Copy [my_submission](my_submission) and [requirements.txt](requirements.txt) to your [SDX 2023 Music Demixing Track Starter Kit](https://gitlab.aicrowd.com/aicrowd/challenges/sound-demixing-challenge-2023/sdx-2023-music-demixing-track-starter-kit/).
 3. Run submit.sh
+
+## How to reproduce the training
+- All code needed to reproduce training is in [my_submission/src](my_submission/src)
+- See [HOW_TO_TRAIN.md](my_submission/src/HOW_TO_TRAIN.md)
+
