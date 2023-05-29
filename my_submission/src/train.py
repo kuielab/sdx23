@@ -68,7 +68,9 @@ def train():
 
         y = batch.to(device)
         x = y.sum(1)  # mixture   
-
+        if config.training.target_instrument is not None:
+            i = config.training.instruments.index(config.training.target_instrument)
+            y = y[:,i]
         with torch.cuda.amp.autocast():        
             y_ = model(x)   
             loss = nn.MSELoss()(y_, y) 
