@@ -18,27 +18,25 @@
   * All 150 tracks of MusdbHQ
   * Augmentation
     * Random chunking and mixing sources from different tracks ([1])
-    * Pitch shift and time stretch ([2])
+    * Pitch shift and time stretch using [Soundstretch](https://www.surina.net/soundtouch/soundstretch.html)
 * Model
   * Ensemble of 5 models
-	  * 2 x Hybrid Demucs[3, 4] 
+	  * 2 x Hybrid Demucs[2, 3] 
 		  * we used the pretrained weights (htdemucs_ft, hdemucs_mmi) from [github.com/facebookresearch/demucs](https://github.com/facebookresearch/demucs)
-	  * 3 x TFC-TDF U-Net[5, 6]
-		  * 'multi-source' version with some architectural improvements, including Channel-wise Subband[7]
+	  * 3 x TFC-TDF U-Net[4, 5]
+		  * 'multi-source' version with some architectural improvements, including Channel-wise Subband[6]
 
 [1] S. Uhlich et al., "Improving music source separation based on deep neural networks through data augmentation and network blending", ICASSP 2017.
 
-[2] Cohen-Hadria, Alice, et al. "Improving singing voice separation using Deep U-Net and Wave-U-Net with data augmentation", EUSIPCO 2019.
+[2] Defossez, Alexandre, "Hybrid Spectrogram and Waveform Source Separation", MDX Workshop at ISMIR 2021.
 
-[3] Defossez, Alexandre, "Hybrid Spectrogram and Waveform Source Separation", MDX Workshop at ISMIR 2021.
+[3] Rouard, Simon, et al. "Hybrid Transformers for Music Source Separation". 
 
-[4] Rouard, Simon, et al. "Hybrid Transformers for Music Source Separation". 
+[4] Choi, Woosung, et al. "Investigating u-nets with various intermediate blocks for spectrogram-based singing voice separation", ISMIR 2020.
 
-[5] Choi, Woosung, et al. "Investigating u-nets with various intermediate blocks for spectrogram-based singing voice separation", ISMIR 2020.
+[5] Kim, Minseok, et al. “Kuielab-mdx-net: A two-stream neural network for music demixing”, MDX Workshop at ISMIR 2021.
 
-[6] Kim, Minseok, et al. “Kuielab-mdx-net: A two-stream neural network for music demixing”, MDX Workshop at ISMIR 2021.
-
-[7] Liu, Haohe, et al. "Channel-wise Subband Input for Better Voice and Accompaniment Separation on High Resolution Music", INTERSPEECH 2020.
+[6] Liu, Haohe, et al. "Channel-wise Subband Input for Better Voice and Accompaniment Separation on High Resolution Music", INTERSPEECH 2020.
 
 # Reproduction
 
