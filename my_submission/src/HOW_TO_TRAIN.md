@@ -11,7 +11,7 @@ pip install -r requirements.txt
 - Before training, you need to store augmented data
     - The WSOLA-like algorithm used by Soundstretch was too slow to be applied on-the-fly.
     - On the other hand, the [Torchaudio implementation](https://pytorch.org/audio/main/generated/torchaudio.transforms.TimeStretch.html) (phase vocoder algorithm) was fast enough but did not improve SDR.
-- Follow the steps at our [mdx-net](https://github.com/kuielab/mdx-net/blob/Leaderboard_A/README_SUBMISSION.md#1-data-preparation) repository
+- Run ```python data_augmentation.py --data_dir ${your_musdb_path} --train True --test False```
 
 
 ### Training
